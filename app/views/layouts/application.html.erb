@@ -2,7 +2,6 @@
 <html>
 <head>
 
-
 	
   <title>Pairbnb</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -10,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
     <% if signed_in? %>
       Signed in as: <%= current_user.email %>
       <%= button_to 'Sign out', sign_out_path, method: :delete %>

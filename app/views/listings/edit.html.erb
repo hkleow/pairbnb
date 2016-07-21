@@ -1,0 +1,19 @@
+<h1>Listings#edit</h1>
+<p>Find me in app/views/listings/edit.html.erb</p>
+
+
+<%= form_for @listing do |f| %>
+	<%= f.label :"Title:"%>
+	<%= f.text_field :titles, :value => @listing.titles  %>
+</br>
+	<%= f.label :"Description:"%>
+	<%= f.text_field :descriptions, :value => @listing.descriptions %>
+</br>
+	<%= f.label :"Address:"%>   
+   <%= f.text_field :locations, :value => @listing.locations  %>
+</br>   
+	<%= f.label :"Price:"%>   
+   <%= f.text_field :prices, :value => @listing.prices  %> 
+</br>   
+   <%= f.submit "Update" %>     
+<% end %>

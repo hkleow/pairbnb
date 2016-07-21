@@ -1,0 +1,27 @@
+
+<%= link_to 'New Listing', new_listing_path %>
+</br>
+above will be nav bar
+</br>
+Its Home page here!
+</br></br>
+<% @listing.each do |list| %>
+
+
+<a href="/listings/<%=list.id%>"><%=list.titles%></a>
+	<% if current_user.id == list.user_id.to_i  %>
+		<a href= "/listings/<%=list.id%>/edit">edit</a> 
+		<%= link_to "delete", listing_path(@listing), method: :delete %>	
+	</br>
+	<%end%>
+</br>
+<%= list.descriptions  %>
+</br>
+<%= list.locations  %>
+</br>
+<%= list.prices  %>
+</br>
+</br>
+<% end %>
+
+

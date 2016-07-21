@@ -1,0 +1,19 @@
+<h1>Listings#show</h1>
+<p>Find me in app/views/listings/show.html.erb</p>
+
+<% if @edit_permission %>
+	<a href= "/listings/<%=params[:id]%>/edit">edit</a> 
+
+	<%= link_to "delete", listing_path(@listing), method: :delete %>
+	
+</br>
+<%end%>
+
+<%= @listing.titles %>
+</br>
+<%= @listing.descriptions %>
+</br>
+<%= @listing.locations %>
+</br>
+$<%= @listing.prices%>
+
