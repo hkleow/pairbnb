@@ -8,12 +8,18 @@ Its Home page here!
 <% @listing.each do |list| %>
 
 
+
+
 <a href="/listings/<%=list.id%>"><%=list.titles%></a>
+
+<% if signed_in? %>
 	<% if current_user.id == list.user_id.to_i  %>
 		<a href= "/listings/<%=list.id%>/edit">edit</a> 
-		<%= link_to "delete", listing_path(@listing), method: :delete %>	
+		<%= link_to "delete", listing_path(list), method: :delete %>	
 	</br>
 	<%end%>
+<%end%>	
+
 </br>
 <%= list.descriptions  %>
 </br>

@@ -6,14 +6,17 @@
 
 	<%= link_to "delete", listing_path(@listing), method: :delete %>
 	
-</br>
+<br>
 <%end%>
-
+<% @listing.avatars.each do |img| %>
+	<%= image_tag(img.large.url) %>
+<% end %>
+<br>
 <%= @listing.titles %>
-</br>
+<br>
 <%= @listing.descriptions %>
-</br>
+<br>
 <%= @listing.locations %>
-</br>
+<br>
 $<%= @listing.prices%>
 

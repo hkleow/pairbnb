@@ -1,7 +1,15 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails' 
+gem 'bootstrap-select-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'mini_magick'
+gem 'fog'
+
 gem 'rails', '4.2.6'
 gem 'clearance'
 

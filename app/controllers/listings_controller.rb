@@ -13,9 +13,9 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.new(listing_params)
 
     if @listing.save
-      redirect_to listing_path(@listing.id)
+      redirect_to @listing # go to /listings/:id ,show page
     else
-      redirect_to listing_path(create)
+      render :new #render new.html.erb
     end  
 
   end
@@ -24,12 +24,13 @@ class ListingsController < ApplicationController
   end
 
   def update
-    byebug
+    
     set_listing.update(listing_params)
     redirect_to listing_path(@listing.id)
   end
 
   def destroy 
+
     @listing.destroy    
     redirect_to mylistings_path(current_user)
   end
@@ -47,11 +48,12 @@ class ListingsController < ApplicationController
 
   private
   def set_listing
+    
     @listing = Listing.find(params[:id])
 
   end 
 
   def listing_params
-    permitted = params.require(:listing).permit(:titles, :descriptions, :locations, :prices)
+    permitted = params.require(:listing).permit(:titles, :descriptions, :locations, :prices, {avatars:[]})
   end 
 end

@@ -1,0 +1,18 @@
+<%= form_for @listing do |f| %>
+	<%= f.file_field :avatars, multiple: true %>
+</br>
+
+	<%= f.label :"Title:"%>
+	<%= f.text_field :titles %>
+</br>
+	<%= f.label :"Description:"%>
+	<%= f.text_field :descriptions %>
+</br>
+	<%= f.label :"Address:"%>   
+   <%= f.text_field :locations %>
+</br>   
+	<%= f.label :"Price:"%>   
+   <%= f.text_field :prices %> 
+</br>   
+   <%= f.submit %>     
+<% end %>
